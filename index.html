@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rock-Paper-Scissors</title>
+</head>
+<html>
+<body>
+	<h1 style="text-align:center;">Rock - Paper - Scissors</h1>
+
+	<p>Start game by typing game()</p>
+	
+
+<script>
+
+// generate three integers 0,1,2
+  
+
+function computerPlay(){
+ switch (Math.floor(Math.random() * 3)){   
+ case 0:
+ return 'rock';
+ case 1:
+ return 'paper';
+ case 2:
+ return 'scissors'
+ }   
+};
+
+
+// coding the choices of player
+
+function playerPlay() {
+  while (true) {
+    playerChoice = prompt("Choose Rock, Paper or Scissors", "");
+    playerChoice = playerChoice.toLowerCase();
+    if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
+        break;
+  }
+  }
+    return playerChoice;
+  }
+  // coding the game outcome
+function game() {
+ let playerWin = 0;
+ let computerWin = 0;
+ let games = 0;
+
+  while (games < 5) {
+  let a = playerPlay();
+  let b = computerPlay();
+    console.log("You chose " + a + " the computer chose " + b);
+      if (a == "rock" && b == "scissors") {
+         console.log("You win!");
+           games++;
+           playerWin++;
+  } else if (a == "scissors" && b == "paper") {
+         console.log("You win!");
+           games++;
+           playerWin++;
+  } else if (a== "paper" && b == "rock") {
+         console.log("You win!");
+           games++;
+           playerWin++;
+ } else if (a == b) {
+          console.log("Tie!");
+           games++;
+ } else {
+          console.log("You lose!");
+          games++;
+          computerWin++;
+ }
+ }
+
+console.log("You won " + playerWin + " games, the computer won " + computerWin + " games.");
+if(playerWin > computerWin) {
+  console.log("The player wins!");
+ } else if(computerWin > playerWin) {
+console.log("The computer wins!");
+} else console.log("It's a tie!");
+}
+
+</script>
+<footer>Rock-Paper-Scissor Assignment- For the odin Project  </footer>
+</body>
+</html>
